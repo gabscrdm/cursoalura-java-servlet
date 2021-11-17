@@ -12,14 +12,18 @@
 	<body>
 	
 		<c:if test="${not empty empresa}">
-			Empresa ${ empresa } cadastrada com sucesso!
+			Empresa ${ empresa } cadastrada com sucesso! <br><br>
 		</c:if>
 	
-		<br><br> Lista de Empresas: <br>
+		Lista de Empresas: <br>
 
 		<ul>
 			<c:forEach items="${empresas}" var="empresa">
-				<li> ${empresa.nome} </li>
+				<li>
+					${empresa.nome} 
+					<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">editar</a>
+					<a href="/gerenciador/removeEmpresa?id=${empresa.id}">excluir</a>	
+				</li>
 			</c:forEach>
 		</ul>
 			

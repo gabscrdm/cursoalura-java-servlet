@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(urlPatterns = "/pagina")
+//@WebServlet(urlPatterns = "/oi")
 public class OiMundoServlet extends HttpServlet {
-
+	
+	public OiMundoServlet() {
+		System.out.println("Criando Oi Mundo Servlet");
+	}
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		
