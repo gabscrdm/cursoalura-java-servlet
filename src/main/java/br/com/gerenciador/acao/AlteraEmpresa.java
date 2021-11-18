@@ -11,7 +11,7 @@ import br.com.gerenciador.modelo.Empresa;
 
 public class AlteraEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nomeEmpresa = request.getParameter("nome");
 		String paramId = request.getParameter("id");
@@ -23,7 +23,7 @@ public class AlteraEmpresa {
 		Empresa empresa = banco.buscaEmpresaId(id);
 		empresa.setNome(nomeEmpresa);
 		
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 		
 
