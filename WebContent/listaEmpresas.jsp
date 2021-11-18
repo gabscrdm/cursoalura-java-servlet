@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List, br.com.gerenciador.servlet.Empresa"%>
+<%@ page import="java.util.List,br.com.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -21,8 +21,8 @@
 			<c:forEach items="${empresas}" var="empresa">
 				<li>
 					${empresa.nome} 
-					<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">editar</a>
-					<a href="/gerenciador/removeEmpresa?id=${empresa.id}">excluir</a>	
+					<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">editar</a>
+					<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">excluir</a>	
 				</li>
 			</c:forEach>
 		</ul>
