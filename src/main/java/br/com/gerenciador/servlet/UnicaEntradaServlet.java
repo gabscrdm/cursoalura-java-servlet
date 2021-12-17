@@ -19,7 +19,7 @@ import br.com.gerenciador.acao.NovaEmpresaForm;
 import br.com.gerenciador.acao.RemoveEmpresa;
 
 
-@WebServlet("/entrada")
+@WebServlet(urlPatterns = "/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,8 +35,6 @@ public class UnicaEntradaServlet extends HttpServlet {
 			response.sendRedirect("entrada?acao=LoginForm");
 			return;
 		}
-		
-		
 		
 		String nomeDaClasse = "br.com.gerenciador.acao." + paramAcao;
 		
